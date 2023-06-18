@@ -2,9 +2,12 @@
 
 ## About
 
-This application is a Bill calculator. Based on the user’s weight and height it will calculate their body mass and give a piece of health advice depending on whether if they have eaten too many pies or if they need to eat more pies. 
+This application is a Bill calculator. User can enter the total bill, tip, and the number of poeple who want to pay, to get the splited amount for every person.
 
 ## 
 
-<img src="https://github.com/HamiHash/BMIcalculator/assets/112081963/1b8a5dfb-7516-45cd-baad-c2ca82b06d5e" width="49%" height="100%">
-<img src="https://github.com/HamiHash/BMIcalculator/assets/112081963/abd8ac4a-8a3a-494b-8f2d-bf57e8e98bec" width="49%" height="100%">
+![s1](https://github.com/HamiHash/Tipsy/assets/112081963/34c11fee-34f6-4d48-985e-86c4904da925)
+![s2](https://github.com/HamiHash/Tipsy/assets/112081963/dca2eb0a-0d70-49c5-bbff-70c50e7dbba6)
+
+<img src="https://github.com/HamiHash/Tipsy/assets/112081963/34c11fee-34f6-4d48-985e-86c4904da925" width="49%" height="100%">
+<img src="https://github.com/HamiHash/Tipsy/assets/112081963/dca2eb0a-0d70-49c5-bbff-70c50e7dbba6" width="49%" height="100%">
