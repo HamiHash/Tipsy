@@ -17,9 +17,12 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var splitNumberLable: UILabel!
     
     var selectedTip: String = ""
-    var splitNumber: Double = 0.0
+    var splitNumber: Int = 0
+    var finalAmount: Float = 0.0
+    var tip: Int = 0
     
     @IBAction func tipChanged(_ sender: UIButton) {
+        billTextFiled.endEditing(true)
         // deselecting other buttons (if)
         if zeroPctButton.isSelected {
             zeroPctButton.isSelected = false
@@ -42,22 +45,25 @@ class CalculatorViewController: UIViewController {
     
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        splitNumber = Double(round(0.1 * sender.value) / 0.1)
-        splitNumberLable.text = String(sender.value)
+        billTextFiled.endEditing(true)
+        splitNumber = Int(sender.value)
+        splitNumberLable.text = String(splitNumber)
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(splitNumber)
-        switch selectedTip {
-            case "0%":
-                print(0.0)
-            case "10%":
-                print(0.1)
-            case "20%":
-                print(0.2)
-            default:
-                print("default")
-            }
+        tip = Int(selectedTip.dropLast(1))!
+        let bill: Float = Float(billTextFiled.text!)!
+        let tipPlusBill = (bill * Float(tip) / 100) + bill
+        finalAmount = tipPlusBill / Float(splitNumber)
+
+        performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.label = String(finalAmount)
+            destinationVC.setting = "Split between \(splitNumber) people with \(tip)% tip."
+        }
     }
 }
-
